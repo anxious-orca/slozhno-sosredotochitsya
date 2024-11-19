@@ -1,9 +1,17 @@
 .page {
   font-family: var(--main-font, sans-serif);
   color: var(--text-color, #F1B2CE);
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  inset: 0;
+  z-index: -1;
+  position: absolute;
   background: url(../images/cover-image-dark.png) no-repeat center / cover;
   background-attachment: fixed;
-  position: relative;
+  opacity: 0.5;
 }
 
 .header {
@@ -238,7 +246,7 @@
   border-block-end: 1px solid var(--styling-accent-color, #FF0070);
 }
 
-@media (width >= 768px){
+@media (width >= 768px) {
   :root {
     --padding-page: 20px;
     --padding-main: 60px;
