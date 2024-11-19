@@ -1,4 +1,5 @@
 .page.theme_dark {
+  --bg-color: #000028;
   --text-color: #F1B2CE;
   --font-accent-color: #FF0070;
   --styling-accent-color: #FF0070;
@@ -13,6 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --bg-color: #000028;
     --text-color: #F1B2CE;
     --font-accent-color: #FF0070;
     --styling-accent-color: #FF0070;
@@ -21,10 +23,10 @@
     --link-accent-color: #FF0070;
     --primary-text-color: #DB00FF;
     --secondary-text-color: #FF0070;
-    --tertiary-text-color: #000028;   
+    --tertiary-text-color: #000028;
   }
 
-  .page.theme_auto {
+  .page {
     background: url(../images/cover-image-dark.png) no-repeat center / cover;
   }
 }

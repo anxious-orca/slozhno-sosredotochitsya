@@ -2,16 +2,9 @@
   font-family: var(--main-font, sans-serif);
   color: var(--text-color, #F1B2CE);
   position: relative;
-}
-
-.page::before {
-  content: '';
-  inset: 0;
-  z-index: -1;
-  position: absolute;
+  background-color: var(--bg-color, #000028);
   background: url(../images/cover-image-dark.png) no-repeat center / cover;
   background-attachment: fixed;
-  opacity: 0.5;
 }
 
 .header {
