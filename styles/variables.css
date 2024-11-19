@@ -11,4 +11,11 @@
   --secondary-text-color: #FF0070;
   --tertiary-text-color: #000028;
   --main-font-size: 18px;
+
+  --padding-page: 10px;
+  --padding-main: 40px;
+  --header-gap: 55px;
+  --main-gap: 50px;
+  --gallery-gap: 10px;
+  --main-heading-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }

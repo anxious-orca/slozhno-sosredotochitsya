@@ -11,9 +11,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, minmax(min-content, auto));
-  gap: 55px;
+  gap: var(--header-gap, 55px);
   position: relative;
-  padding: 10px;
+  padding: var(--padding-page, 10px);
 }
 
 .header__theme-menu {
@@ -82,11 +82,11 @@
 }
 
 .slogan {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--main-heading-font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
   line-height: 82.5%;
   font-weight: bold;
   color: var(--primary-text-color, #DB00FF);
-  text-shadow: 4px 4px 0 var(--font-accent-color, #FF0070);
+  text-shadow: 3px 3px 0 var(--font-accent-color, #FF0070);
 }
 
 .heading {
@@ -111,8 +111,8 @@
   font-size: var(--main-font-size, 18px);
   font-weight: normal;
   color: var(--secondary-text-color, #FF0070);
-  inset-inline-end: 38px;
-  inset-block-start: 12px;
+  inset-inline-end: calc(28px + var(--padding-page, 10px));
+  inset-block-start: calc(2px + var(--padding-page, 10px));
 }
 
 .header__decoration::after {
@@ -132,8 +132,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
+  inset-inline-end: var(--padding-page, 10px);
+  inset-block-start: var(--padding-page, 10px);
   border-inline-end: 1px solid var(--styling-accent-color, #FF0070);
   border-block-start: 1px solid var(--styling-accent-color, #FF0070);
 }
@@ -143,17 +143,17 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  inset-inline-start: 10px;
-  inset-block-end: 10px;
+  inset-inline-start: var(--padding-page, 10px);
+  inset-block-end: var(--padding-page, 10px);
   border-inline-start: 1px solid var(--styling-accent-color, #FF0070);
   border-block-end: 1px solid var(--styling-accent-color, #FF0070);
 }
 
 .main {
-  padding: 40px 10px;
+  padding: var(--padding-main, 40px) var(--padding-page, 10px);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: var(--main-gap, 50px);
 }
 
 .section {
@@ -197,7 +197,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, minmax(min-content, auto));
-  gap: 10px;
+  gap: var(--gallery-gap, 10px);
 }
 
 .gallery__picture {
@@ -213,7 +213,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 10px;
+  padding: var(--padding-page, 10px);
 }
 
 .footer::before {
@@ -221,8 +221,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
+  inset-inline-end: var(--padding-page, 10px);
+  inset-block-start: var(--padding-page, 10px);
   border-inline-end: 1px solid var(--styling-accent-color, #FF0070);
   border-block-start: 1px solid var(--styling-accent-color, #FF0070);
 }
@@ -232,55 +232,35 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  inset-inline-start: 10px;
-  inset-block-end: 10px;
+  inset-inline-start: var(--padding-page, 10px);
+  inset-block-end: var(--padding-page, 10px);
   border-inline-start: 1px solid var(--styling-accent-color, #FF0070);
   border-block-end: 1px solid var(--styling-accent-color, #FF0070);
 }
 
 @media (width >= 768px){
-  .header {
-    padding: 20px;
-    gap: 50px;
+  :root {
+    --padding-page: 20px;
+    --padding-main: 60px;
+    --header-gap: 25px;
+    --main-gap: 60px;
+    --gallery-gap: 20px;
+    --main-heading-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .slogan {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  .header {
+    padding: var(--padding-page, 10px) var(--padding-page, 10px) var(--padding-page, 10px) 0;
   }
 
   .header__text {
-    margin-inline-start: 48%;
+    margin-inline-start: 51%;
     max-inline-size: 491px;
-  }
-  
-  .header__decoration {
-    inset-inline-end: 48px;
-    inset-block-start: 22px;
-  }
-  
-  .header__decoration::after {
-    inset-inline-end: -19px;
-    inset-block-start: 7px;
-  }
-  
-  .header::before {
-    inset-inline-end: 20px;
-    inset-block-start: 20px;
-  }
-  
-  .header::after {
-    inset-inline-start: 20px;
-    inset-block-end: 20px;
-  }
-
-  .main {
-    padding: 40px 20px;
   }
 
   .section:nth-child(1) {
     display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: repeat(2, minmax(min-content, auto));
+    grid-template-columns: 1fr 65%;
+    grid-template-rows: repeat(3, minmax(min-content, auto));
   }
 
   .section:nth-child(1) .heading {
@@ -295,8 +275,8 @@
 
   .section:nth-child(2) {
     display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: repeat(4, minmax(min-content, auto));
+    grid-template-columns: 1fr 65%;
+    grid-template-rows: repeat(5, minmax(min-content, auto));
   }
 
   .section:nth-child(2) .heading {
@@ -311,8 +291,8 @@
 
   .section:nth-child(3) {
     display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: repeat(6, minmax(min-content, auto));
+    grid-template-columns: 1fr 65%;
+    grid-template-rows: repeat(7, minmax(min-content, auto));
   }
 
   .section:nth-child(3) .heading:nth-child(1) {
@@ -329,7 +309,6 @@
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, minmax(min-content, auto));
-    gap: 20px;
   }
 
   .gallery .heading {
@@ -361,41 +340,45 @@
     grid-column: 2 / 4;
     grid-row: 4 / 5;
   }
-
-  .footer {
-    padding: 20px;
-  }
-
-  .footer::before {
-    inset-inline-end: 20px;
-    inset-block-start: 20px;
-  }
-  
-  .footer::after {
-    inset-inline-start: 20px;
-    inset-block-end: 20px;
-  }
 }
 
 @media (width >= 1024px) {
+  :root {
+    --padding-main: 60px;
+    --header-gap: 20px;
+    --main-gap: 60px;
+    --gallery-gap: 20px;
+    --main-heading-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
   .header__theme-menu {
     grid-row: 1 / 2;
     justify-content: center;
-    min-block-size: 28px;
+    align-items: start;
+    min-block-size: 70px;
+    padding-inline-start: 20px;
   }
   
   .header__theme-menu-list {
     flex-direction: row;
   }
 
+  .section:nth-child(1) {
+    grid-template-columns: 1fr 66%;
+  }
+
   .section:nth-child(2) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, minmax(min-content, auto));
+    grid-template-rows: repeat(3, minmax(min-content, auto));
   }
 
   .section:nth-child(2) .card {
     grid-column: span 1;
     grid-row: 2 / 3;
+  }
+
+  .section:nth-child(3) {
+    grid-template-columns: 1fr 66%;
   }
 }
 
