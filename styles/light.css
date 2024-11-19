@@ -10,7 +10,6 @@
   --secondary-text-color: #353430;
   --tertiary-text-color: #353430;
   background: url(../images/cover-image-light.png) no-repeat center / cover;
-  background-attachment: fixed;
 }
 
 .theme_light .header__decoration {
@@ -33,7 +32,6 @@
 
   .page {
     background: url(../images/cover-image-light.png) no-repeat center / cover;
-    background-attachment: fixed;
   }
 
   .header__decoration {

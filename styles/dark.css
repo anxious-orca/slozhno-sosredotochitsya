@@ -10,7 +10,6 @@
   --secondary-text-color: #FF0070;
   --tertiary-text-color: #000028;
   background: url(../images/cover-image-dark.png) no-repeat center / cover;
-  background-attachment: fixed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +28,5 @@
 
   .page {
     background: url(../images/cover-image-dark.png) no-repeat center / cover;
-    background-attachment: fixed;
   }
 }
