@@ -10,7 +10,7 @@
     <link rel="icon" href="./images/favicon.ico" sizes="any">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./images/mobile-icon.png">
-    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/dark.css">
@@ -18,18 +18,22 @@
   </head>
   <body class="page">
     <header class="header decorated-zone">
+      <div class="header__decoration" aria-hidden="true">rec</div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
             <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
+              class="header__theme-menu-button 
+              header__theme-menu-button_type_light"
             >
               День
             </button>
           </li>
           <li class="header__theme-menu-item">
             <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+              class="header__theme-menu-button 
+              header__theme-menu-button_active 
+              header__theme-menu-button_type_auto"
               disabled
             >
               Авто
@@ -37,13 +41,26 @@
           </li>
           <li class="header__theme-menu-item">
             <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
+              class="header__theme-menu-button 
+              header__theme-menu-button_type_dark"
             >
               Неон
             </button>
           </li>
         </ul>
       </nav>
+      <h1 class="slogan header__title">
+        no focus
+      </h1>
+      <p class="heading header__text text-accent ">
+        <span class="paragraph-line">
+          Что делать, когда не можешь делать ничего
+        </span> 
+        <span class="paragraph-line">
+          Или почему нам так сложно
+          сконцентрироваться, особенно когда очень надо
+        </span>
+      </p>
     </header>
     <script src="./scripts/script.js"></script>
   </body>

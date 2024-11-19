@@ -9,7 +9,9 @@
   --bg-color: #000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
-  --h1-text-color: #DB00FF;
-  --h2-text-color: #FF0070;
-  --h3-text-color: #000028;
+  --accent-color-semitransparent: #FF007066;
+  --primary-text-color: #DB00FF;
+  --secondary-text-color: #FF0070;
+  --tertiary-text-color: #000028;
+  --main-font-size: 18px;
 }

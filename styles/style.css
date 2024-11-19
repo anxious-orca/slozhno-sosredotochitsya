@@ -1,8 +1,151 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: var(--main-font, sans-serif);
   background-color: var(--bg-color, #000028);
   color: var(--text-color, #F1B2CE);
 }
+
+.header {
+  min-block-size: calc(100vb - 20px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, minmax(min-content, auto));
+  gap: clamp(3.4375rem, -7.1173rem + 25.2809vb, 9.0625rem);
+  position: relative;
+  padding: 10px;
+}
+/* расположение элементов в header */
+.header__theme-menu {
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__title {
+  grid-row: 3 / 4;
+  min-block-size: 192px;
+  display: flex;
+  align-items: center;
+}
+
+.header__text {
+  grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  max-inline-size: 364px;
+}
+/* стилизация элементов в header */
+.header__theme-menu-button {
+  font-family: inherit;
+  font-size: var(--main-font-size, 18px);
+  line-height: 1;
+  font-weight: normal;
+  color: var(--secondary-text-color, #FF0070);
+  background: transparent;
+  text-transform: lowercase;
+  border: none;
+  width: 100%;
+  text-align: center;
+  padding: 3px 13px 5px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  padding: 2px 12px 4px;
+  border: 1px solid var(--accent-color, #FF0070);
+}
+
+.header__theme-menu-button:not(.header__theme-button_is-active):hover {
+  padding: 2px 12px 4px;
+  border: 1px solid var(--accent-color-semitransparent, #FF007066);
+}
+
+.slogan {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  font-weight: bold;
+  color: var(--primary-text-color, #DB00FF);
+  text-shadow: 4px 4px 0 var(--accent-color, #FF0070);
+}
+
+.heading {
+  font-size: var(--main-font-size, 18px);
+  line-height: 1.3;
+  font-weight: bold;
+  color: var(--secondary-text-color, #FF0070);
+}
+
+.text-accent {
+  background-color: var(--accent-color, #FF0070);
+  color: var(--tertiary-text-color, #000028);
+}
+
+.paragraph-line {
+  display: inline-block;
+}
+/* декоративные элементы */
+.header__decoration {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: var(--main-font-size, 18px);
+  color: var(--secondary-text-color, #FF0070);
+  inset-inline-end: 38px;
+  inset-block-start: 12px;
+}
+
+.header__decoration::before {
+  content: '';
+  position: absolute;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color, #FF0070);
+  inset-inline-end: -19px;
+  inset-block-start: 7px;
+  box-shadow: 0 0 4px 2px var(--accent-color, #FF0070);
+}
+
+.header__decoration::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: -28px;
+  inset-block-start: -1px;
+  border-inline-end: 1px solid var(--accent-color, #FF0070);
+  border-block-start: 1px solid var(--accent-color, #FF0070);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  z-index: -1;
+  background: url(../images/cover-image-dark.png) no-repeat center / cover;
+  opacity: 0.5;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  border-inline-start: 1px solid var(--accent-color, #FF0070);
+  border-block-end: 1px solid var(--accent-color, #FF0070);
+}
+
+
