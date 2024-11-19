@@ -2,6 +2,7 @@
   font-family: var(--main-font, sans-serif);
   color: var(--text-color, #F1B2CE);
   background-color: var(--bg-color, #000028);
+  background: url(../images/cover-image-dark.png) no-repeat center / cover;
   background-attachment: fixed;
 }
 
