@@ -1,12 +1,23 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   font-family: var(--main-font, sans-serif);
-  background-color: var(--bg-color, #000028);
   color: var(--text-color, #F1B2CE);
+  background: url(../images/cover-image-dark.png) no-repeat center / cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-color, #000028);
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .header {
-  min-block-size: calc(100vb - 20px);
+  min-block-size: 100vb;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, minmax(min-content, auto));
@@ -101,7 +112,7 @@
 .paragraph-line {
   display: inline-block;
 }
-/* декоративные элементы */
+/* декоративные элементы в header */
 .header__decoration {
   position: absolute;
   text-transform: uppercase;
@@ -111,7 +122,7 @@
   inset-block-start: 12px;
 }
 
-.header__decoration::before {
+.header__decoration::after {
   content: '';
   position: absolute;
   inline-size: 9px;
@@ -123,27 +134,15 @@
   box-shadow: 0 0 4px 2px var(--accent-color, #FF0070);
 }
 
-.header__decoration::after {
+.header::before {
   content: '';
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  inset-inline-end: -28px;
-  inset-block-start: -1px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
   border-inline-end: 1px solid var(--accent-color, #FF0070);
   border-block-start: 1px solid var(--accent-color, #FF0070);
-}
-
-.header::before {
-  content: '';
-  position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-end: 0;
-  inset-block-start: 0;
-  z-index: -1;
-  background: url(../images/cover-image-dark.png) no-repeat center / cover;
-  opacity: 0.5;
 }
 
 .header::after {
@@ -156,7 +155,7 @@
   border-inline-start: 1px solid var(--accent-color, #FF0070);
   border-block-end: 1px solid var(--accent-color, #FF0070);
 }
-
+/* расположение и стилизация в main */
 .main {
   padding: 40px 10px;
   display: flex;
@@ -169,21 +168,13 @@
   flex-direction: column;
   gap: 20px;
 }
-/* 
-.section__heading {
 
-}
-*/
 .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-/* 
-.text {
 
-} 
-*/
 .card__heading {
   font-weight: normal;
   background-color: var(--accent-color, #FF0070);
@@ -196,11 +187,11 @@
 }
 
 .text__link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid var(--text-color, #F1B2CE);
 }
 
 .text__link:focus-visible {
-  border-block-end: 1px solid var(--accent-color, #FF0070);
+  border: 1px solid var(--text-color, #F1B2CE);
 }
 
 .gallery {
@@ -214,6 +205,37 @@
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
+}
+/* расположение элементов в footer */
+.footer {
+  min-block-size: 100vb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+/* декоративные элементы footer */
+.footer::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  border-inline-end: 1px solid var(--accent-color, #FF0070);
+  border-block-start: 1px solid var(--accent-color, #FF0070);
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  border-inline-start: 1px solid var(--accent-color, #FF0070);
+  border-block-end: 1px solid var(--accent-color, #FF0070);
 }
 
 
