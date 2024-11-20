@@ -9,7 +9,7 @@
   --primary-text-color: #FFC2E6;
   --secondary-text-color: #353430;
   --tertiary-text-color: #353430;
-  background: url(../images/cover-image-light.png) no-repeat center / cover;
+  background-image: url(../images/cover-image-light.png);
 }
 
 .theme_light .header__decoration {
@@ -31,7 +31,7 @@
   }
 
   .page {
-    background: url(../images/cover-image-light.png) no-repeat center / cover;
+    background-image: url(../images/cover-image-light.png);
   }
 
   .header__decoration {
