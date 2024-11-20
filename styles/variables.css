@@ -13,6 +13,9 @@
   --main-font-size: 18px;
   --padding-page: 10px;
   --padding-main: 40px;
+  --padding-button: 3px 13px 5px;
+  --padding-button-reduced: 2px 12px 4px;
+  --padding-button-bottom-reduced: 3px 13px 4px;
   --header-gap: 55px;
   --main-gap: 50px;
   --gallery-gap: 10px;
