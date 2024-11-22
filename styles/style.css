@@ -353,8 +353,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .section_solution .heading {
+  .section_solution .section__heading {
     grid-column: 1 / 4;
+    max-inline-size: 30vi;
   }
 
   .section_solution .card {
